@@ -1,6 +1,5 @@
 <?php
 namespace TM\App;
-ini_set('display_errors',1);
 require_once "./Controller/Teams.php";
 require_once "./Model/TeamsModal.php";
 class Route

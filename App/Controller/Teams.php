@@ -20,9 +20,6 @@ class Teams
         $model = new TeamsModal();
         $team = $model->getTeamById($post['id']);
         include_once(__DIR__."/../Views/team.php");
-
     }
-
-
 
 }
