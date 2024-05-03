@@ -19,10 +19,10 @@
         </thead>
         <tbody>
             <?php
-                if(empty($list)):
+                if(!empty($list) && $list->num_rows == 0):
                     ?>
                     <tr>
-                        <td colspan="5"  >No teams found.Create one with above add team field.</td>
+                        <td colspan="5"  >No teams found.Create one with above add team button.</td>
                     </tr>
                     <?php
                 else:
