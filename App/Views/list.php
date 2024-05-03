@@ -7,7 +7,7 @@
         <button type="button" class="btn btn-primary" onclick="addTeamPopUp()">Add Team</button>
     </div>
     <div class="table-responsive">
-    <table class="table table-hover">
+        <table class="table table-hover table-bordered">
         <thead>
             <tr>
                 <td>No</td>
@@ -22,7 +22,7 @@
                 if(empty($list)):
                     ?>
                     <tr>
-                        <td colspan="5" center class="center">No teams found.Create one with above add team field.</td>
+                        <td colspan="5"  >No teams found.Create one with above add team field.</td>
                     </tr>
                     <?php
                 else:
@@ -36,6 +36,7 @@
                         <td><?=$item["team_count"]?></td>
                         <td>
                             <button type="button" class="btn btn-primary" onclick="getTeamPopUp('<?=$item['id']?>')">View</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteTeam('<?=$item['id']?>')">Delete</button>
                         </td>
                     </tr>
                 <?php

@@ -16,6 +16,9 @@ class Route
                 case 'get':
                     $team_controller->getTeam($post);
                     break;
+                case 'remove':
+                    $team_controller->removeTeam($post);
+                    break;
             }
         }
     }

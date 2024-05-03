@@ -40,6 +40,15 @@ class TeamsModal
         return $team;
     }
 
+    public function removeTeamById($id)
+    {
+        $conn = $this->connectDatabase();
+        $sql =  "DELETE FROM $this->table WHERE id=$id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
+
+
     public function insertTeam($post)
     {
         $conn = $this->connectDatabase();
@@ -48,4 +57,5 @@ class TeamsModal
         $sql = $conn->prepare("INSERT INTO $this->table (name, lead_name, team_count,team_members) VALUES ('{$post['name']}', '{$post['lead_name']}', {$team_count},'{$team_members}')");
         return $sql->execute();
     }
+
 }

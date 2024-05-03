@@ -12,14 +12,24 @@ class Teams
     }
 
     public function addTeam($post){
+
         $model = new TeamsModal();
-        return $model->insertTeam($post);
+        $status =  $model->insertTeam($post);
+        if ($status){
+            echo "Team added successfully";
+        }
     }
 
     public function getTeam($post){
         $model = new TeamsModal();
         $team = $model->getTeamById($post['id']);
         include_once(__DIR__."/../Views/team.php");
+    }
+
+    public function removeTeam($post){
+        $model = new TeamsModal();
+        $team = $model->removeTeamById($post['id']);
+
     }
 
 }
